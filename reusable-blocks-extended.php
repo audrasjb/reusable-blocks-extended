@@ -145,7 +145,8 @@ add_action( 'admin_notices', 'reblex_reusable_screen_block_pattern_registration'
  * @return $columns
  */
 function reblex_reusable_screen_add_column( $columns ) {
-	$columns = array(
+	unset( $columns['date'] );
+	$new_columns = array(
 		'cb' => '<input type="checkbox" />',
 		'title' => esc_html__( 'Block title', 'reusable-blocks-extended' ),
 		'reblex-reusable-instances' => esc_html__( 'Used in', 'reusable-blocks-extended' ),
@@ -153,6 +154,7 @@ function reblex_reusable_screen_add_column( $columns ) {
 		'reblex-reusable-conversion' => esc_html__( 'Pattern conversion', 'reusable-blocks-extended' ),
 		'reblex-date-modified' => esc_html__( 'Last modified', 'reusable-blocks-extended' )
 	);
+	$columns = array_merge( $columns, $new_columns );
 	return $columns;
 }
 
