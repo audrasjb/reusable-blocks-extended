@@ -3,7 +3,7 @@
  * Plugin Name:	Reusable Blocks Extended
  * Plugin URI:	https://jeanbaptisteaudras.com/en/2019/09/reusable-block-extended-a-cool-wordpress-plugin-to-extend-gutenberg-reusable-block-feature/
  * Description:	Extend Gutenberg Reusable Blocks feature with a complete admin panel, widgets, shortcodes and PHP functions.
- * Version:		0.8
+ * Version:		0.9
  * Author:		audrasjb
  * Author URI:	https://jeanbaptisteaudras.com/en
  * License:		GPL-2.0+
@@ -475,7 +475,13 @@ add_filter( 'dashboard_glance_items', 'reblex_add_reusables_to_dashboard', 10, 1
  * custom_glance_items function. Register user generated patterns.
  */
 function reblex_register_block_patterns() {
+	global $pagenow;
+
 	if ( ! function_exists( 'register_block_type' ) || ! function_exists( 'register_block_pattern' ) ) {
+		return;
+	}
+
+	if ( 'media-new.php' === $pagenow || 'async-upload.php' === $pagenow ) {
 		return;
 	}
 
