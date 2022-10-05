@@ -2,9 +2,9 @@
 Contributors: audrasjb, whodunitagency, larrach
 Donate link: https://www.paypal.me/audrasjb
 Tags: Reusable, Blocks, Gutenberg, Widget, PHP Function, Preview, Shortcode, Réutilisable, bloc, pattern, generator
-Requires at least: 5.5
-Tested up to: 5.8
-Stable tag: 0.8
+Requires at least: 5.0
+Tested up to: 6.0
+Stable tag: 0.9
 Requires PHP: 7.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -67,6 +67,10 @@ Note for developers: you may also need to **get** the shortcode data **before** 
 `reblex_get_block( NUMERIC_ID_OF_THE_REUSABLE_BLOCK );`
 
 == Changelog ==
+
+= 0.9 =
+* Props @chaton666 (Marie Comet) for a small fix.
+* WP 6.0 compatibility.
 
 = 0.8 =
 * Performance enhancement on the `wp_block` list table. Props @grapplerulrich for spotting this.
