@@ -3,7 +3,7 @@
 	
 	$( window ).load( function() {
 
-		$( '.reblex_button_more' ).click( function() {
+		$( '.reblex_button_more' ).on( 'click', function() {
 			var toggle_new = $( this ).attr( 'data-toggle' );
 			var toggle_old = $( this ).text();
 			$( this ).attr( 'data-toggle', toggle_old );
@@ -48,7 +48,7 @@
 			} );
 		} );
 
-		$( '.reblex_button' ).click( function( e ) {
+		$( '.reblex_button' ).on( 'click', function( e ) {
 			var current_modal = $( this ).attr( 'data-target' );
 			$( current_modal ).dialog( 'open' );
 		} );
