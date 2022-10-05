@@ -1,7 +1,7 @@
 ( function( $ ) {
 	'use strict';
 	
-	$( window ).load( function() {
+	$( window ).on( 'load', function() {
 
 		$( '.reblex_button_more' ).on( 'click', function() {
 			var toggle_new = $( this ).attr( 'data-toggle' );
