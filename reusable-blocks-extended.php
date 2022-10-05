@@ -475,8 +475,12 @@ add_filter( 'dashboard_glance_items', 'reblex_add_reusables_to_dashboard', 10, 1
  * custom_glance_items function. Register user generated patterns.
  */
 function reblex_register_block_patterns() {
+	
 	global $pagenow;
-
+	if ( 'media-new.php' === $pagenow || 'async-upload.php' === $pagenow ) {
+		return;
+	}
+	
 	if ( ! function_exists( 'register_block_type' ) || ! function_exists( 'register_block_pattern' ) ) {
 		return;
 	}
